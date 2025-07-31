@@ -1,0 +1,30 @@
+# Entorno virtual
+env/
+venv/
+
+# Archivos de Python compilados
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Archivos de configuración de entorno
+*.env
+
+# Archivos de logs
+*.log
+
+# Bases de datos SQLite
+*.sqlite3
+*.db
+
+# Archivos de configuración de IDEs
+.vscode/
+.idea/
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db:
+
+# Carpeta de migraciones (si usas Flask-Migrate)
+migrations/
+
