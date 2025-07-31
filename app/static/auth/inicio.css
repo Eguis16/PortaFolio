@@ -1,0 +1,46 @@
+/* Centrar el contenido vertical y horizontalmente */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    margin: 0;
+}
+
+/* Estilo del cuadro */
+.box {
+    background-color: #F1DEC9;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    text-align: justify;
+}
+
+/* Título */
+.titulo {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Contenido */
+.contenido p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Enlace */
+.main-form li {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.main-form a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+}
