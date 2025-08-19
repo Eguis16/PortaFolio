@@ -12,16 +12,29 @@
     {% block styles %} {% endblock %}
     <title>Document</title>
 </head>
-
 <body>
     <nav class="navbar">
-        <ul class="main-list">
+        <div class="navbar-content">
+            <ul class="main-list">
             <li><a href="{{url_for('auth.inicio')}}">Sobre Mi</a></li>
-            <li><a href="url_for{}">Proyectos</a></li>
             <li><a href="url_for{}">Contacto</a></li>
         </ul>
+        <button id="theme-toggle" class="button">🌓 Cambiar Tema</button>
+        </div>
+        
     </nav>
-    <section class="contenido">{% block content %} {% endblock %}</section>
-</body>
+    <section class="box">{% block content %}
+        <div class="contenido">
+        <h1>¡Bienvenido a mi Portafolio!</h1>
+        <p>Explora mis proyectos, conoce más sobre mí y descubre mis habilidades.</p>
+        <a href="{{url_for('auth.proyectos')}}">Ver Proyectos</a>
+    </div>
+    <div class="contenido-1" id="frases">
 
+    </div>
+        {% endblock %}</section>
+    
+</body>
+<script src="{{url_for('static', filename='js/thema.js')}}"></script>
+<script src="{{url_for('static', filename='js/main.js')}}"></script>
 </html>

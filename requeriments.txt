@@ -1,0 +1,12 @@
+Flask
+Flask-Login
+Flask-WTF
+Flask-Migrate
+Flask-SQLAlchemy
+Flask-Bcrypt
+Flask-Mail
+Flask-Cors
+python-dotenv
+gunicorn
+requests
+mysqlclient

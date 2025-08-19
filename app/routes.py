@@ -12,3 +12,11 @@ def home():
 def inicio():
 
     return render_template('auth/inicio.html')
+
+@bp.route('/proyectos', methods=['GET', 'POST'])
+def proyectos():
+    return render_template('auth/proyectos.html')
+
+@bp.route('/contacto', methods=['GET', 'POST'])
+def contacto():
+    return render_template('auth/contacto.html')

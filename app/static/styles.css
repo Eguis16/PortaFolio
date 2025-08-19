@@ -1,24 +1,49 @@
 :root {
-    --color-bg: #C4E1E6;
+    /* Colores */
+    --color-bg: #FDFAF6;
     --color-text: #000000;
     --color-hover: #78B9B5;
     --color-secondary: #E8CFC4;
     --color-accent: #A3D9C9;
     --color-title: #3E3E3E;
     --color-detail: #BFAE9F;
-    --font-main: 'Segoe UI', 'sans-serif';
+
+    /* Tipografía */
+    --font-main: 'Segoe UI', sans-serif;
+    --font-size-base: 16px;
+    --line-height-base: 1.6;
+
+    /* Espaciado */
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 2rem;
+
+    /* Transiciones */
     --transition-speed: 0.3s;
+}
+
+.dark-mode {
+    --color-bg: #393E46;
+    --color-text: #F5F5F5;
+    --color-hover: #A3D9C9;
+    --color-secondary: #2E2E2E;
+    --color-accent: #78B9B5;
+    --color-title: #E0E0E0;
+    --color-detail: #888888;
 }
 
 body {
     background-color: var(--color-bg);
     color: var(--color-text);
     font-family: var(--font-main);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-base);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Navbar */
 .navbar {
     position: fixed;
     top: 0;
@@ -28,15 +53,30 @@ body {
     backdrop-filter: blur(10px);
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     font-family: var(--font-main);
-    animation: fadeIn 0.2s ease-in-out;
+    animation: fadeIn var(--transition-speed) ease-in-out;
     z-index: 1000;
 }
 
+.navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+}
+
+@media (max-width: 780px) {
+    .navbar-content {
+        flex-direction: column;
+        align-items: flex-end;
+        gap: var(--spacing-md);
+    }
+}
+/* Lista principal */
 .main-list {
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: var(--spacing-lg);
     flex-wrap: wrap;
 }
 
@@ -44,7 +84,7 @@ body {
     color: var(--color-text);
     text-decoration: none;
     font-weight: bold;
-    transition: color var(--transition-speed) ease, transform var(--transition-speed) ease;
+    transition: color var(--transition-speed), transform var(--transition-speed);
 }
 
 .main-list li a:hover {
@@ -53,57 +93,66 @@ body {
     cursor: pointer;
 }
 
+/* Responsive */
 @media (max-width: 780px) {
     .main-list {
         flex-direction: column;
         align-items: flex-end;
-        gap: 1rem;
-    }
-
-    .navbar {
-        padding: 1rem;
+        gap: var(--spacing-md);
     }
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        --color-bg: #ffffff;
-        --color-text: #000000;
-        --color-hover: #00caff;
-    }
+/* Componentes */
+.box {
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+    transition: box-shadow var(--transition-speed);
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+.box:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
 }
 
-/* Componentes adicionales */
-.button {
-    background-color: var(--color-secondary);
+.contenido {
     color: var(--color-title);
+    font-size: 1.1rem;
+    line-height: 1.7;
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    border-radius: 12px;
+    animation: fadeIn var(--transition-speed) ease-in-out;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    word-break: break-word;
+}
+
+.contenido:hover {
+    transform: translateY(-2px);
+}
+
+.button {
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: 5px;
     border: none;
-    padding: 0.75rem 1.5rem;
     font-family: var(--font-main);
     font-weight: bold;
-    border-radius: 5px;
-    transition: background-color var(--transition-speed) ease;
+    font-size: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
 }
 
 .button:hover {
-    background-color: var(--color-accent);
+    color: var(--color-accent);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
     cursor: pointer;
 }
 
 .section-highlight {
     background-color: var(--color-secondary);
     color: var(--color-title);
-    padding: 2rem;
+    padding: var(--spacing-lg);
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }

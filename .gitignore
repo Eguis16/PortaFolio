@@ -23,8 +23,12 @@ __pycache__/
 
 # Archivos de sistema
 .DS_Store
-Thumbs.db:
+Thumbs.db
 
 # Carpeta de migraciones (si usas Flask-Migrate)
 migrations/
 
+# Pytest cache
+.pytest_cache/
+
+# Coverage
