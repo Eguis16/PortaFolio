@@ -12,12 +12,29 @@ function Frases() {
   const contenedor = document.getElementById('frases');
   if (!contenedor) return;
 
-  function Update() {
-    contenedor.textContent = frases[Math.floor(Math.random() * frases.length)];
+  let Ultima_Frase = '';
+
+  function FraseAleatoria() {
+    let Nueva_Frase;
+    do {
+      Nueva_Frase = frases[Math.floor(Math.random() * frases.length)];
+    } while (Nueva_Frase === Ultima_Frase)
+    Ultima_Frase = Nueva_Frase;
+    return Nueva_Frase;
   }
 
-  Update(); // Mostrar una frase al cargar
-  setInterval(Update, 10000); // Cambiar cada 10 segundos
-}
+  function Update () {
+    contenedor.style.opacity = 0;
+    setTimeout(() => {
+      contenedor.textContent = FraseAleatoria();
+      contenedor.style.opacity = 1;
+      contenedor.style.animation = 'slideIn 0.5s ease'
+    }, 500);
+  }
 
-document.addEventListener('DOMContentLoaded', Frases);
+  Update();
+  setInterval(Update, 5000);
+};
+
+Frases()
+
