@@ -18,23 +18,38 @@ function Frases() {
     let Nueva_Frase;
     do {
       Nueva_Frase = frases[Math.floor(Math.random() * frases.length)];
-    } while (Nueva_Frase === Ultima_Frase)
+    } while (Nueva_Frase === Ultima_Frase);
     Ultima_Frase = Nueva_Frase;
     return Nueva_Frase;
   }
 
-  function Update () {
+  function escribirTexto(texto) {
+    contenedor.textContent = '';
+    let i = 0;
+    const velocidad = 50; // velocidad de escritura
+
+    function escribir() {
+      if (i < texto.length) {
+        contenedor.textContent += texto.charAt(i);
+        i++;
+        setTimeout(escribir, velocidad);
+      }
+    }
+
+    escribir();
+  }
+
+  function Update() {
     contenedor.style.opacity = 0;
     setTimeout(() => {
-      contenedor.textContent = FraseAleatoria();
+      const frase = FraseAleatoria();
+      escribirTexto(frase);
       contenedor.style.opacity = 1;
-      contenedor.style.animation = 'slideIn 0.5s ease'
     }, 500);
   }
 
   Update();
-  setInterval(Update, 5000);
-};
+  setInterval(Update, 7000); // cambia cada 7 segundos
+}
 
-Frases()
-
+Frases();
