@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -7,34 +7,30 @@
     <link rel="stylesheet" href="{{url_for('static', filename='styles.css')}}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-    {% block styles %} {% endblock %}
-    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    {% block styles %}{% endblock %}
+    <title>Portafolio de Eguis Suarez</title>
 </head>
 
 <body>
-   <nav class="navbar">
-    <div class="navbar-content">
-        <ul class="main-nav">
-            <li><a href="{{ url_for('auth.inicio') }}">Sobre Mí</a></li>
-            <li><a href="{{ url_for('auth.contacto') }}">Contacto</a></li>
-
-            <li class="has-children">
-                <a href="#" title="">Proyectos</a>
-                <ul class="sub-menu">
-                    <li><a href="#">Sysprep</a></li>
-                    <li><a href="#">Inventario</a></li>
-                    <li><a href="#">Documentación</a></li>
-                </ul>
-            </li>
-        </ul>
-
-        <button id="theme-toggle" class="button">🌓 Cambiar Tema</button>
-    </div>
-</nav>
-
-
+    <i>hola</i>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <ul class="main-nav">
+                <li><a href="{{ url_for('auth.inicio') }}">Sobre Mí</a></li>
+                <li><a href="{{ url_for('auth.contacto') }}">Contacto</a></li>
+                <li class="has-children">
+                    <a href="#" title="">Proyectos</a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Sysprep</a></li>
+                        <li><a href="#">Inventario</a></li>
+                        <li><a href="#">Documentación</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <button id="theme-toggle" class="button">🌓 Cambiar Tema</button>
+        </div>
+    </nav>
     <main>
         <section class="box">
             {% block content %}
@@ -43,10 +39,10 @@
                 <p>Explora mis proyectos, conoce más sobre mí y descubre mis habilidades.</p>
             </div>
             <div class="contenido-1" id="frases"></div>
+            <i class="fi fi-brands-github"></i>
             {% endblock %}
         </section>
     </main>
-
     <!-- Scripts -->
     <script src="{{ url_for('static', filename='js/thema.js') }}"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>

@@ -39,7 +39,7 @@ body {
     font-family: var(--font-main);
     font-size: var(--font-size-base);
     line-height: var(--line-height-base);
-    background-image: url('img/fondo.jpg');
+    background-image: url('img/bg/programmer.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -63,7 +63,7 @@ body::before {
 }
 
 .dark-mode body {
-    background-image: url('img/fondo.jpg');
+    background-image: url('img/bg/programmer.jpg');
 }
 
 .dark-mode body::before {
